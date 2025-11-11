@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="fonts.css">
+</head>
+<body class="mcb-flex-c mcb-ai-c">
+    <main class="mcb-card mcb-form-cont">
+        <h1 class="mcb-txt-c">Formulario</h1>
+        <p class="mcb-fs-18 mcb-fw-5 mcb-color-b3">Llena los campos con la información correspondiente.</p>
+        <section class="mcb-grid-3">
+            <!-- correo -->
+            <fieldset class="mcb-field">
+                <label for="" class="mcb-label">Correo</label>
+                <input type="email" class="mcb-input" placeholder="Correo">
+            </fieldset>
+            <!-- num poliza -->
+            <fieldset class="mcb-field">
+                <label for="" class="mcb-label">Número de Póliza</label>
+                <input type="text" class="mcb-input" placeholder="Número de Póliza">
+            </fieldset>
+            <!-- Número de empleado (expediente/Colaborador) -->
+            <fieldset class="mcb-field">
+                <label for="" class="mcb-label">Número de empleado (expediente/Colaborador)</label>
+                <input type="text" class="mcb-input" placeholder="Número de Póliza">
+            </fieldset>
+
+            <!-- Nombre de Asegurado Titular  -->
+            <fieldset class="mcb-field">
+                <label for="" class="mcb-label">Nombre de Asegurado Titular </label>
+                <input type="text" class="mcb-input" placeholder="Número de Póliza">
+            </fieldset>
+            <!-- Nombre de Asegurado afectado  -->
+            <fieldset class="mcb-field">
+                <label for="" class="mcb-label">Nombre de Asegurado afectado </label>
+                <input type="text" class="mcb-input" placeholder="Número de Póliza">
+            </fieldset>
+        </section>
+        <hr>
+        <p class="mcb-fs-18 mcb-fw-5 mcb-color-b3">Adjunta la documentación requerida.</p>
+        
+        <section class="mcb-grid-3">
+            <fieldset class="mcb-file-upload">
+                <label for="file_1" >Formato de Informe Médico</label>
+                <label for="file_1" class="mcb-field-area">Seleccionar Archivo...</label>
+                <input type="file" name="file_1" id="file_1" accept="image/*, application/pdf" onchange="uploadFile(this)">
+            </fieldset>
+
+            
+            <fieldset class="mcb-file-upload">
+                <label for="file_2" >Formato de Informe Médico</label>
+                <label for="file_2" class="mcb-field-area">Seleccionar Archivo...</label>
+                <input type="file" name="file_2" id="file_2" accept="image/*, application/pdf" onchange="uploadFile(this)">
+            </fieldset>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Definir el tamaño máximo permitido en bytes (10 MB)
+    const MAX_SIZE_BYTES = 10 * 1024 * 1024; 
+
+    function uploadFile(input) {
+        // 1. Obtener la referencia al label donde se mostrará el nombre.
+        // Busca el elemento con la clase 'mcb-field-area' dentro del mismo fieldset.
+        const fieldset = input.closest('fieldset');
+        const displayLabel = fieldset ? fieldset.querySelector('.mcb-field-area') : null;
+
+        const file = input.files[0];
+
+        if (file) {
+            // 2. *** VALIDACIÓN DE TAMAÑO ***
+            if (file.size > MAX_SIZE_BYTES) {
+                alert(`El archivo "${file.name}" excede el tamaño máximo de 10 MB.`);
+                
+                // Limpiar el input y resetear el nombre del archivo
+                input.value = ''; 
+                if (displayLabel) {
+                    displayLabel.textContent = 'Archivo muy grande.';
+                }
+                return false;
+            }
+
+            // 3. *** MOSTRAR NOMBRE DEL ARCHIVO (solo si es válido) ***
+            if (displayLabel) {
+                displayLabel.textContent = file.name;
+            }
+            return true;
+
+        } else {
+            // 4. Si se cancela la selección, se limpia el label.
+            if (displayLabel) {
+                displayLabel.textContent = '';
+            }
+        }
+    }
+
+    // Opcional: Asignar la función a todos los inputs con la clase 'file-input-validate' (Ejemplo más dinámico)
+    // Pero si usas onchange="validarYMostrarArchivo(this)" en el HTML, no necesitas esto.
+    
+    // Hacemos la función accesible globalmente si es necesario para el HTML in-line
+    window.uploadFile = uploadFile;
+});
+    </script>
+</body>
+</html>
