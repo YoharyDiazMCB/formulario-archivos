@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario MCB</title>
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="fonts.css">
 </head>
 <body class="mcb-flex-c mcb-ai-c">
-    <main class="mcb-card mcb-form-cont">
-        <h1 class="mcb-txt-c">Formulario</h1>
+    <form class="mcb-card mcb-form-cont">
+        <div class="mcb-flex mcb-gap-20 mcb-ai-c mqm-col">
+            <img width="auto" height="80px" src="/MCBlogo.webp" alt="MCBrokers">
+            <h1 class="mcb-txt-c">Formulario</h1>
+        </div>
         <p class="mcb-fs-18 mcb-fw-5 mcb-color-b3">Llena los campos con la información correspondiente.</p>
         <section class="mcb-grid-3">
             <!-- correo -->
@@ -42,21 +45,76 @@
         <hr>
         <p class="mcb-fs-18 mcb-fw-5 mcb-color-b3">Adjunta la documentación requerida.</p>
         
-        <section class="mcb-grid-3">
+        <section class="mcb-grid-3 mcb-ai-fe">
             <fieldset class="mcb-file-upload">
-                <label for="file_1" >Formato de Informe Médico</label>
-                <label for="file_1" class="mcb-field-area">Seleccionar Archivo...</label>
+                <p>Formato de Informe Médico</p>
+                <p class="mcb-label">Sube 1 archivo PDF o imagen. Tamaño máximo: 10 MB.</p>
+                <label for="file_1" class="mcb-field-area">
+                    <svg width="33" height="40" viewBox="0 0 33 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.75 25.9997L21.8628 28.8498L18.5625 25.6496V34.0003H14.4375V25.6496L11.1885 28.8006L8.25 25.9997L16.5 18.0006L24.75 25.9997Z" fill="#0056A0"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33 11.9994V35.9997C33 37.0997 32.5964 38.0419 31.7886 38.8252C30.9808 39.6086 30.0094 40 28.875 40H4.125C2.99062 40 2.01924 39.6086 1.21143 38.8252C0.403635 38.0419 0 37.0997 0 35.9997V4.00029C0 2.9003 0.403635 1.9581 1.21143 1.17477C2.01924 0.391435 2.99062 0 4.125 0H20.625L33 11.9994ZM4.125 35.9997H28.875V14.0003H18.5625V4.00029H4.125V35.9997Z" fill="#0056A0"/>
+                    </svg>
+                    Seleccionar Archivo...
+                </label>
                 <input type="file" name="file_1" id="file_1" accept="image/*, application/pdf" onchange="uploadFile(this)">
             </fieldset>
 
-            
             <fieldset class="mcb-file-upload">
-                <label for="file_2" >Formato de Informe Médico</label>
-                <label for="file_2" class="mcb-field-area">Seleccionar Archivo...</label>
+                <p>Formato de Aviso de Accidente o Enfermedad</p>
+                <p class="mcb-label">Sube 1 archivo PDF o imagen. Tamaño máximo: 10 MB.</p>
+                <label for="file_2" class="mcb-field-area">
+                    <svg width="33" height="40" viewBox="0 0 33 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.75 25.9997L21.8628 28.8498L18.5625 25.6496V34.0003H14.4375V25.6496L11.1885 28.8006L8.25 25.9997L16.5 18.0006L24.75 25.9997Z" fill="#0056A0"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33 11.9994V35.9997C33 37.0997 32.5964 38.0419 31.7886 38.8252C30.9808 39.6086 30.0094 40 28.875 40H4.125C2.99062 40 2.01924 39.6086 1.21143 38.8252C0.403635 38.0419 0 37.0997 0 35.9997V4.00029C0 2.9003 0.403635 1.9581 1.21143 1.17477C2.01924 0.391435 2.99062 0 4.125 0H20.625L33 11.9994ZM4.125 35.9997H28.875V14.0003H18.5625V4.00029H4.125V35.9997Z" fill="#0056A0"/>
+                    </svg>
+                    Seleccionar Archivo...
+                </label>
                 <input type="file" name="file_2" id="file_2" accept="image/*, application/pdf" onchange="uploadFile(this)">
             </fieldset>
+
+            <fieldset class="mcb-file-upload">
+                <p>Estudios con interpretación</p>
+                <p class="mcb-label">Sube 1 archivo PDF o imagen. Tamaño máximo: 10 MB.</p>
+                <label for="file_3" class="mcb-field-area">
+                    <svg width="33" height="40" viewBox="0 0 33 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.75 25.9997L21.8628 28.8498L18.5625 25.6496V34.0003H14.4375V25.6496L11.1885 28.8006L8.25 25.9997L16.5 18.0006L24.75 25.9997Z" fill="#0056A0"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33 11.9994V35.9997C33 37.0997 32.5964 38.0419 31.7886 38.8252C30.9808 39.6086 30.0094 40 28.875 40H4.125C2.99062 40 2.01924 39.6086 1.21143 38.8252C0.403635 38.0419 0 37.0997 0 35.9997V4.00029C0 2.9003 0.403635 1.9581 1.21143 1.17477C2.01924 0.391435 2.99062 0 4.125 0H20.625L33 11.9994ZM4.125 35.9997H28.875V14.0003H18.5625V4.00029H4.125V35.9997Z" fill="#0056A0"/>
+                    </svg>
+                    Seleccionar Archivo...
+                </label>
+                <input type="file" name="file_3" id="file_3" accept="image/*, application/pdf" onchange="uploadFile(this)">
+            </fieldset>
+
+            <fieldset class="mcb-file-upload">
+                <p>Recetas u ordenes medicas</p>
+                <p class="mcb-label">Sube 1 archivo PDF o imagen. Tamaño máximo: 10 MB.</p>
+                <label for="file_4" class="mcb-field-area">
+                    <svg width="33" height="40" viewBox="0 0 33 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.75 25.9997L21.8628 28.8498L18.5625 25.6496V34.0003H14.4375V25.6496L11.1885 28.8006L8.25 25.9997L16.5 18.0006L24.75 25.9997Z" fill="#0056A0"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33 11.9994V35.9997C33 37.0997 32.5964 38.0419 31.7886 38.8252C30.9808 39.6086 30.0094 40 28.875 40H4.125C2.99062 40 2.01924 39.6086 1.21143 38.8252C0.403635 38.0419 0 37.0997 0 35.9997V4.00029C0 2.9003 0.403635 1.9581 1.21143 1.17477C2.01924 0.391435 2.99062 0 4.125 0H20.625L33 11.9994ZM4.125 35.9997H28.875V14.0003H18.5625V4.00029H4.125V35.9997Z" fill="#0056A0"/>
+                    </svg>
+                    Seleccionar Archivo...
+                </label>
+                <input type="file" name="file_4" id="file_4" accept="image/*, application/pdf" onchange="uploadFile(this)">
+            </fieldset>
+
+            <fieldset class="mcb-file-upload">
+                <p>Identificación del INE del asegurado</p>
+                <p class="mcb-label">Sube 1 archivo PDF o imagen. Tamaño máximo: 10 MB.</p>
+                <label for="file_5" class="mcb-field-area">
+                    <svg width="33" height="40" viewBox="0 0 33 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.75 25.9997L21.8628 28.8498L18.5625 25.6496V34.0003H14.4375V25.6496L11.1885 28.8006L8.25 25.9997L16.5 18.0006L24.75 25.9997Z" fill="#0056A0"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33 11.9994V35.9997C33 37.0997 32.5964 38.0419 31.7886 38.8252C30.9808 39.6086 30.0094 40 28.875 40H4.125C2.99062 40 2.01924 39.6086 1.21143 38.8252C0.403635 38.0419 0 37.0997 0 35.9997V4.00029C0 2.9003 0.403635 1.9581 1.21143 1.17477C2.01924 0.391435 2.99062 0 4.125 0H20.625L33 11.9994ZM4.125 35.9997H28.875V14.0003H18.5625V4.00029H4.125V35.9997Z" fill="#0056A0"/>
+                    </svg>
+                    Seleccionar Archivo...
+                </label>
+                <input type="file" name="file_5" id="file_5" accept="image/*, application/pdf" onchange="uploadFile(this)">
+            </fieldset>
         </section>
-    </main>
+        <div class="mcb-flex mcb-jc-fe">
+            <button class="mcb-cta-btn">Enviar Formulario</button>
+        </div>
+    </form>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
     // Definir el tamaño máximo permitido en bytes (10 MB)

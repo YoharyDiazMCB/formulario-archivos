@@ -307,17 +307,56 @@ fieldset, .mcb-field{
 }
 
 .mcb-file-upload .mcb-field-area{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
     background: linear-gradient(#d6f3ff, #edfaff);
-    width: 100px;
+    min-width: 200px;
+    width: 90%;
     height: 100px;
+    padding: 10px;
     border: solid 2px var(--cta-color-0);
     border-style: dashed;
+    border-radius: 10px;
     font-size: .875rem;
+    font-weight: 500;
+    transition: var(--transition-1);
 }
+
+.mcb-field-area:hover{
+    scale: 1.03;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .mcb-file-upload input{
     display: none;
 }
+.mcb-cta-btn{
+    cursor: pointer;
+    border: none;
+    background-color: var(--cta-color-0);
+    font-family: "Plus Jakarta Sans";
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: var(--transition-1);
+}
+
+.mcb-cta-btn:hover{
+    background-color: var(--cta-color-1);
+}
 /* * MEDIA QUERY */
+@media screen and (min-width: 1700px){
+    .mcb-form-cont{
+        width: 1500px;
+    }
+}
 @media screen and (max-width: 1100px){
     .mq-hide{
         display: none;
@@ -380,5 +419,8 @@ fieldset, .mcb-field{
     }
     .mcb-grid-3{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .mcb-file-upload .mcb-field-area{
+        width: 100%;
     }
 }
